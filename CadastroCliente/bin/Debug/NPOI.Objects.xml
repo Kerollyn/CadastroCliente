@@ -1,0 +1,592 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NPOI.Objects</name>
+    </assembly>
+    <members>
+        <member name="T:NPOI.Objects.AlternateCellStyleAttribute">
+            <summary>
+            Indicate the style alternate excel cell
+            </summary>
+        </member>
+        <member name="T:NPOI.Objects.CellStyleAttribute">
+            <summary>
+            CellStyleAttribute attribute class is used to set the cell style when convert the object to excel file
+            </summary>
+        </member>
+        <member name="T:NPOI.Objects.CellValueConverters">
+            <summary>
+            the default cell value converters
+            </summary>
+        </member>
+        <member name="M:NPOI.Objects.CellValueConverters.RichTextConverter(NPOI.SS.UserModel.ICell)">
+            <summary>
+            convert the cell value to rich text string(HTML)
+            </summary>
+            <param name="cell">the excel cell</param>
+            <returns>the rich text string (HTML)</returns>
+        </member>
+        <member name="M:NPOI.Objects.CellValueConverters.BooleanConverter(NPOI.SS.UserModel.ICell)">
+            <summary>
+            the default converter that be used to convert the cell value to boolean 
+            </summary>
+            <param name="cell">the excel cell</param>
+            <returns>the boolean value</returns>
+        </member>
+        <member name="M:NPOI.Objects.CellValueConverters.NumericConverter(NPOI.SS.UserModel.ICell)">
+            <summary>
+            the default converter used to convert the cell value to number
+            </summary>
+            <param name="cell">the excel cell</param>
+            <returns>the number</returns>
+        </member>
+        <member name="M:NPOI.Objects.CellValueConverters.DateTimeConverter(NPOI.SS.UserModel.ICell)">
+            <summary>
+            the default converter used to convert the cell value to DateTime
+            </summary>
+            <param name="cell">the excel cell</param>
+            <returns>the datetime value</returns>
+        </member>
+        <member name="M:NPOI.Objects.CellValueConverters.ByteConverter(NPOI.SS.UserModel.ICell)">
+            <summary>
+            the default converter used to convert the cell value to byte
+            </summary>
+            <param name="cell">the excel cell</param>
+            <returns>the byte value</returns>
+        </member>
+        <member name="M:NPOI.Objects.CellValueConverters.CharConverter(NPOI.SS.UserModel.ICell)">
+            <summary>
+            the default converter used to convert the cell value to char
+            </summary>
+            <param name="cell">the excel value</param>
+            <returns>the char value</returns>
+        </member>
+        <member name="M:NPOI.Objects.CellValueConverters.GuidConverter(NPOI.SS.UserModel.ICell)">
+            <summary>
+            the default converter used to convert the cell value to Guid
+            </summary>
+            <param name="cell">the excel cell</param>
+            <returns>the Guid value</returns>
+        </member>
+        <member name="M:NPOI.Objects.CellValueConverters.UnknownTypeConverter(NPOI.SS.UserModel.ICell,System.Type)">
+            <summary>
+            the default converter used to convert the cell value to any other object
+            </summary>
+            <param name="cell">the excel cell</param>
+            <param name="type">the type of the object</param>
+            <returns>the value of the object</returns>
+        </member>
+        <member name="T:NPOI.Objects.DrawingIgnoreAttribute">
+            <summary>
+            the DrawingIgnoreAttribute class is used to represend this field will be ignored while converting the object to excel
+            </summary>
+        </member>
+        <member name="T:NPOI.Objects.HeaderStyleAttribute">
+            <summary>
+            the HeaderStyleAttribute class is used to set the header style while drawing the excel file
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.HeaderStyleAttribute.ColumnWidth">
+            <summary>
+            the column width, the default value is 6
+            </summary>
+        </member>
+        <member name="M:NPOI.Objects.HeaderStyleAttribute.#ctor">
+            <summary>
+            the constructor
+            </summary>
+        </member>
+        <member name="T:NPOI.Objects.NPOIColumnAttribute">
+            <summary>
+            NPOIColumnAttribute indicate that this property will be mapped to a featured excel column
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.NPOIColumnAttribute.Index">
+            <summary>
+            the column index
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.NPOIColumnAttribute.Name">
+            <summary>
+            the column name
+            </summary>
+        </member>
+        <member name="M:NPOI.Objects.NPOIColumnAttribute.#ctor">
+            <summary>
+            the constructor
+            </summary>
+        </member>
+        <member name="M:NPOI.Objects.NPOIColumnAttribute.#ctor(System.Int32)">
+            <summary>
+            the constructor
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:NPOI.Objects.NPOIColumnAttribute.#ctor(System.String)">
+            <summary>
+            the constructor
+            </summary>
+            <param name="name">the name of the column</param>
+        </member>
+        <member name="M:NPOI.Objects.NPOIColumnAttribute.#ctor(System.Int32,System.String)">
+            <summary>
+            the constructor
+            </summary>
+            <param name="index">the column index</param>
+            <param name="name">the column name</param>
+        </member>
+        <member name="T:NPOI.Objects.NPOIObjectAttribute">
+            <summary>
+            NPOIObjectAttribute indicate that this model will be mapped to excel
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.NPOIObjectAttribute.HeaderRowIndex">
+            <summary>
+            the header row index
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.NPOIObjectAttribute.StartIndex">
+            <summary>
+            the first data row index
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.NPOIObjectAttribute.EndIndex">
+            <summary>
+            the last data row index
+            </summary>
+        </member>
+        <member name="M:NPOI.Objects.NPOIObjectAttribute.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            the constructor
+            </summary>
+            <param name="headerRow">the header row index</param>
+            <param name="startIndex">the first data row</param>
+            <param name="endIndex">the last data row</param>
+        </member>
+        <member name="T:NPOI.Objects.RichTextAttribute">
+            <summary>
+            indicate that this property is the rich text string
+            </summary>
+        </member>
+        <member name="T:NPOI.Objects.StyleAttribute">
+            <summary>
+            the StyleAttribute is used to the the style of the excel cell (header cell or the data cell)
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.StyleAttribute.Height">
+            <summary>
+            the height
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.StyleAttribute.TextColor">
+            <summary>
+            the text color
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.StyleAttribute.BackgroundColor">
+            <summary>
+            the background colur
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.StyleAttribute.ForegroundColor">
+            <summary>
+            the foreground color
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.StyleAttribute.TextAlign">
+            <summary>
+            text aling
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.StyleAttribute.VerticalAlign">
+            <summary>
+            vertical aling
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.StyleAttribute.FillPattern">
+            <summary>
+            fill pattern
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.StyleAttribute.FontWeight">
+            <summary>
+            the font weight
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.StyleAttribute.FontFamily">
+            <summary>
+            the font family
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.StyleAttribute.FontSize">
+            <summary>
+            the font size
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.StyleAttribute.IsItalic">
+            <summary>
+            the font is italic or not
+            </summary>
+        </member>
+        <member name="M:NPOI.Objects.StyleAttribute.#ctor">
+            <summary>
+            the constructor
+            </summary>
+        </member>
+        <member name="T:NPOI.Objects.ColorConvert">
+            <summary>
+            convert the color string to color object
+            </summary>
+        </member>
+        <member name="M:NPOI.Objects.ColorConvert.ToColor(System.String)">
+            <summary>
+            convert the color string (#FF0000 or red) to color object
+            </summary>
+            <param name="hex">the string of the color, for example #FF0000, red</param>
+            <returns>the color object</returns>
+        </member>
+        <member name="T:NPOI.Objects.ColumnDrawing">
+            <summary>
+            the ColumnDrawing class
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ColumnDrawing.ColumnName">
+            <summary>
+            the name of the column
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ColumnDrawing.ColumnIndex">
+            <summary>
+            the column inde
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ColumnDrawing.ColumnWidth">
+            <summary>
+            the column width
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ColumnDrawing.HasAlternate">
+            <summary>
+            indicate that if the DrawingFactory will set alternate style to the alternate excel row
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ColumnDrawing.Property">
+            <summary>
+            the Property info of the model
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ColumnDrawing.CellStyle">
+            <summary>
+            the style of the cell
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ColumnDrawing.CellFont">
+            <summary>
+            the font of the cell
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ColumnDrawing.AlternateCellStyle">
+            <summary>
+            the style of the alternate cell
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ColumnDrawing.AlternateCellFont">
+            <summary>
+            the font of the alternate cell
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ColumnDrawing.HeaderStyle">
+            <summary>
+            the style of the header cell
+            </summary>
+        </member>
+        <member name="T:NPOI.Objects.DrawingFactory">
+            <summary>
+            DrawingFactory is used to create an excel file/stream and write the value of the model to the excel file/stream
+            </summary>
+        </member>
+        <member name="F:NPOI.Objects.DrawingFactory.Workbook">
+            <summary>
+            Excel workbook object
+            </summary>
+        </member>
+        <member name="F:NPOI.Objects.DrawingFactory.ExcelStream">
+            <summary>
+            excel output stream
+            </summary>
+        </member>
+        <member name="F:NPOI.Objects.DrawingFactory.IsOutStream">
+            <summary>
+            is output stream or not
+            </summary>
+        </member>
+        <member name="F:NPOI.Objects.DrawingFactory.UseTemplate">
+            <summary>
+            use excel template or not
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.DrawingFactory.ExcelPath">
+            <summary>
+            the file path of the excel file
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.DrawingFactory.WorkbookType">
+            <summary>
+            the type of the workbook, Excel2003(.xls) or Excel2007(.xlsx)
+            </summary>
+        </member>
+        <member name="M:NPOI.Objects.DrawingFactory.#ctor(System.String)">
+            <summary>
+            the constructor
+            </summary>
+            <param name="path">the file path of the excel. the file extension must be .xls or .xlsx</param>
+        </member>
+        <member name="M:NPOI.Objects.DrawingFactory.#ctor(System.IO.Stream,NPOI.Objects.ExcelType)">
+            <summary>
+            the constructor
+            </summary>
+            <param name="stream">the excel output stream</param>
+            <param name="workbookType">the excel type</param>
+        </member>
+        <member name="M:NPOI.Objects.DrawingFactory.#ctor(System.IO.Stream)">
+            <summary>
+            the constructor
+            </summary>
+            <param name="stream">the excel output stream</param>
+        </member>
+        <member name="M:NPOI.Objects.DrawingFactory.FillCellStyle(NPOI.Objects.StyleAttribute)">
+            <summary>
+            convert the StyleAttribute to the CellStyle object
+            </summary>
+            <param name="attr">the object of the StyleAttribute</param>
+            <returns>the CellStyle</returns>
+        </member>
+        <member name="M:NPOI.Objects.DrawingFactory.FillFont(NPOI.Objects.StyleAttribute)">
+            <summary>
+            convert StyleAttribute to the excel font 
+            </summary>
+            <param name="attr">the value of the StyleAttribute</param>
+            <returns>the font</returns>
+        </member>
+        <member name="M:NPOI.Objects.DrawingFactory.GetColumnDrawings(System.Type)">
+            <summary>
+            get the ColumnDrawing info from the model type
+            </summary>
+            <param name="classType">the type of the model class</param>
+            <returns>the ColumnDrawing array</returns>
+        </member>
+        <member name="M:NPOI.Objects.DrawingFactory.DrawHeader(System.Collections.Generic.IEnumerable{NPOI.Objects.ColumnDrawing},NPOI.SS.UserModel.ISheet,System.Int32)">
+            <summary>
+            draw the header of the excel
+            </summary>
+            <param name="drawings">the ColumnDrawing array</param>
+            <param name="sheet">the excel sheet</param>
+            <param name="headerRowIndex">the header row index</param>
+        </member>
+        <member name="M:NPOI.Objects.DrawingFactory.DrawCellValue(NPOI.SS.UserModel.ICell,System.Object)">
+            <summary>
+            draw the cell value of the excel
+            </summary>
+            <param name="cell">the excel cell</param>
+            <param name="value">the excel cell value</param>
+        </member>
+        <member name="M:NPOI.Objects.DrawingFactory.DrawCellFontAndStyle(NPOI.SS.UserModel.ICell,NPOI.Objects.ColumnDrawing,System.Boolean)">
+            <summary>
+            draw the cell font and style
+            </summary>
+            <param name="cell">the excel cell</param>
+            <param name="drawing">the ColumnDrawing object</param>
+            <param name="alternate">is alternate excel cell</param>
+        </member>
+        <member name="M:NPOI.Objects.DrawingFactory.DrawHeaderFontAndStyle(NPOI.SS.UserModel.ICell,NPOI.Objects.ColumnDrawing)">
+            <summary>
+            draw the header cell font and style
+            </summary>
+            <param name="cell">the excel cell</param>
+            <param name="drawing">the ColumnDrawing object</param>
+        </member>
+        <member name="M:NPOI.Objects.DrawingFactory.DrawRow(System.Collections.Generic.IEnumerable{NPOI.Objects.ColumnDrawing},NPOI.SS.UserModel.ISheet,System.Int32,System.Object)">
+            <summary>
+            draw the whole row
+            </summary>
+            <param name="drawings">the array of the ColumnDrawing</param>
+            <param name="sheet">the excel sheet</param>
+            <param name="rowIndex">the row index</param>
+            <param name="obj">the value object of the whole row</param>
+        </member>
+        <member name="M:NPOI.Objects.DrawingFactory.Draw``1(System.Int32,System.String,``0[])">
+            <summary>
+            write objects to worksheet
+            </summary>
+            <typeparam name="T">any type of model</typeparam>
+            <param name="sheetIndex">the worksheet index</param>
+            <param name="sheetName">the worksheet name</param>
+            <param name="objects">the arry of object</param>
+        </member>
+        <member name="M:NPOI.Objects.DrawingFactory.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
+        <member name="M:NPOI.Objects.DrawingFactory.SetTemplate(System.String)">
+            <summary>
+            set the excel template to the worksheet
+            </summary>
+            <param name="path">the path of the excel template</param>
+        </member>
+        <member name="T:NPOI.Objects.DuplicateColumnException">
+            <summary>
+            this exception indicate that the model has set the duplicate column index
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.DuplicateColumnException.Message">
+            <summary>
+            the messagge text of the exceltion
+            </summary>
+        </member>
+        <member name="M:NPOI.Objects.DuplicateColumnException.#ctor(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            constructor of the exception
+            </summary>
+            <param name="columnName">the column name</param>
+            <param name="oldColumn">the old column index</param>
+            <param name="newColumn">the new column index</param>
+            <param name="rowIndex">the row index</param>
+        </member>
+        <member name="T:NPOI.Objects.ExcelType">
+            <summary>
+            The excel type
+            </summary>
+        </member>
+        <member name="F:NPOI.Objects.ExcelType.Excel2007">
+            <summary>
+            the file extension is .xlsx
+            </summary>
+        </member>
+        <member name="F:NPOI.Objects.ExcelType.Excel2003">
+            <summary>
+            the file extension is .xls
+            </summary>
+        </member>
+        <member name="T:NPOI.Objects.InvalidColumnException">
+            <summary>
+            indicate the column set is invalid or canot be found
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.InvalidColumnException.Message">
+            <summary>
+            the message of the exception
+            </summary>
+        </member>
+        <member name="M:NPOI.Objects.InvalidColumnException.#ctor(System.String)">
+            <summary>
+            the constructor
+            </summary>
+            <param name="columnName">the column name</param>
+        </member>
+        <member name="T:NPOI.Objects.ObjectFactory">
+            <summary>
+            the ObjectFactory class is used to read the excel file/stream and convert the value in excel to the model
+            </summary>
+        </member>
+        <member name="F:NPOI.Objects.ObjectFactory.Workbook">
+            <summary>
+            the excel workbook
+            </summary>
+        </member>
+        <member name="F:NPOI.Objects.ObjectFactory.ExcelStream">
+            <summary>
+            the excel stream
+            </summary>
+        </member>
+        <member name="F:NPOI.Objects.ObjectFactory.NeedClose">
+            <summary>
+            indicate that the ObjectFactory need auto-close the stream or not after reading the excel file/stream 
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ObjectFactory.ExcelPath">
+            <summary>
+            the file path of the excel
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ObjectFactory.ExcelType">
+            <summary>
+            the excel type
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ObjectFactory.RichTextConverter">
+            <summary>
+            rich text converter
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ObjectFactory.BooleanConverter">
+            <summary>
+            boolean converter
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ObjectFactory.NumericConverter">
+            <summary>
+            number converter
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ObjectFactory.DateTimeConverter">
+            <summary>
+            DateTime convertor
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ObjectFactory.ByteConverter">
+            <summary>
+            byte converter
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ObjectFactory.CharConverter">
+            <summary>
+            char converter
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ObjectFactory.GuidConverter">
+            <summary>
+            Guid Converter
+            </summary>
+        </member>
+        <member name="P:NPOI.Objects.ObjectFactory.UnknownTypeConverter">
+            <summary>
+            Unknown type converter
+            </summary>
+        </member>
+        <member name="M:NPOI.Objects.ObjectFactory.#ctor(System.String)">
+            <summary>
+            constructor
+            </summary>
+            <param name="path">the excel path</param>
+        </member>
+        <member name="M:NPOI.Objects.ObjectFactory.#ctor(System.IO.Stream,NPOI.Objects.ExcelType)">
+            <summary>
+            constuctor
+            </summary>
+            <param name="stream">the excel stream</param>
+            <param name="excelType">the excel type</param>
+        </member>
+        <member name="M:NPOI.Objects.ObjectFactory.SheetToObjects``1(System.Int32)">
+            <summary>
+            convert the excel worksheet to model array
+            </summary>
+            <typeparam name="T">the type of the model</typeparam>
+            <param name="sheetIndex">the sheeet index</param>
+            <returns>the model array</returns>
+        </member>
+        <member name="M:NPOI.Objects.ObjectFactory.SheetToObjects``1(System.String)">
+            <summary>
+            convert the excel worksheet to model array
+            </summary>
+            <typeparam name="T">the type of the model</typeparam>
+            <param name="sheetName">the sheet name</param>
+            <returns>the model array</returns>
+        </member>
+        <member name="M:NPOI.Objects.ObjectFactory.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
+    </members>
+</doc>
